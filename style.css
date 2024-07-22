@@ -1,0 +1,28 @@
+.bgd-black {
+  background-color: #2f2d2e;
+}
+
+.bgd-yellow {
+    background-color: #eca400;
+  }
+
+.font-kavoon {
+  font-family: "Kavoon", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navbar-toggler-icon {
+  filter: invert(100%);
+}
+
+.active{
+    color: #eca400 !important;
+    scale: 1.1 !important;
+}
+
+.btnSignIn{
+    border-color: #eca400;
+    border-width: 3px;
+    border-style: solid;
+}
