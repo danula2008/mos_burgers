@@ -3,8 +3,16 @@
 }
 
 .bgd-yellow {
-    background-color: #eca400;
-  }
+  background-color: #eca400;
+}
+
+.bgd-red {
+  background-color: #f14a41;
+}
+
+.bgd-green {
+  background-color: #3fb43d;
+}
 
 .font-kavoon {
   font-family: "Kavoon", serif;
@@ -16,13 +24,52 @@
   filter: invert(100%);
 }
 
-.active{
-    color: #eca400 !important;
-    scale: 1.1 !important;
+.active {
+  color: #eca400 !important;
 }
 
-.btnSignIn{
-    border-color: #eca400;
-    border-width: 3px;
-    border-style: solid;
+.btnSignIn,
+.btnSignUp {
+  border-color: #eca400;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.btnSignIn:hover {
+  background-color: #eca400;
+  transition-duration: 500ms;
+  scale: 1.03;
+}
+
+.btnSignUp:hover {
+  background-color: #2f2d2e;
+  transition-duration: 500ms;
+  scale: 1.03;
+}
+
+.btn-shadow {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-order:hover {
+  background: #e33826;
+  transition-duration: 300ms;
+  scale: 1.03;
+}
+
+.nav-hover:hover {
+  color: #e9b847 !important;
+}
+
+.text-yellow {
+  color: #eca400;
+}
+
+.txt-shadow{
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover{
+  scale: 1.05;
+  transition-duration: 500ms;
 }
