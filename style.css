@@ -58,7 +58,7 @@
 }
 
 .nav-hover:hover {
-  color: #e9b847 !important;
+  color: #f8c96e !important;
 }
 
 .text-yellow {
@@ -72,4 +72,9 @@
 .card:hover{
   scale: 1.05;
   transition-duration: 500ms;
+}
+
+.active_option{
+  background-color: #eca400 !important;
+  color: white !important;
 }

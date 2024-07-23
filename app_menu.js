@@ -41,8 +41,7 @@ burgers = [
 
 
 burgers.forEach((item) => {
-  code += `<div class="col-lg-4 col-md-4 col-sm-6 col-12 my-2 p-3 p-sm-3 p-md-4 p-lg-5">
-  <a href="menu.html" class="text-decoration-none">  
+  code += `<div class="col-lg-4 col-md-4 col-sm-6 col-12 my-2 p-3 p-sm-3 p-md-4 p-lg-5">  
   <div class="card bgd-black btn-shadow h-100">
         <img src="Assets/img/${item.img}.svg" class="position-absolute end-50"
         style="width: 60%; bottom: -20%;"
@@ -53,7 +52,6 @@ burgers.forEach((item) => {
             <h4 id="product_price" class="text-yellow ">Rs. ${item.price}</h4>
         </div>
     </div>
-    </a>
 </div>`;
 });
 
