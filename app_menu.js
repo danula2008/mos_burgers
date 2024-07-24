@@ -1,58 +1,132 @@
-let code = "";
+let products;
 
-burgers = [
-    {
-        "img": "topburger",
-        "title": "Classic Cheeseburger",
-        "description": "Beef patty with cheese,<br> lettuce, and pickles.",
-        "price": "150",
-    },
-    {
-        "img": "burger2",
-        "title": "BBQ Bacon Burger",
-        "description": "Beef patty with bacon,<br> BBQ sauce, and cheese.",
-        "price": "200",
-    },
-    {
-        "img": "burger3",
-        "title": "Veggie Delight",
-        "description": "Veggie patty with<br> veggies and mayo.",
-        "price": "180",
-    },
-    {
-        "img": "burger4",
-        "title": "Spicy Chicken Burger",
-        "description": "Chicken patty with<br> tomatoe and spicy sauce.",
-        "price": "170",
-    },
-    {
-        "img": "burger5",
-        "title": "Mushroom Swiss Burger",
-        "description": "Beef patty with <br> and Swiss cheese.",
-        "price": "190",
-    },
-    {
-        "img": "burger6",
-        "title": "Double Patty Burger",
-        "description": "Two beef patties with<br> cheese and sauce.",
-        "price": "250",
-    },
-]
+fetch("data.json")
+  .then((response) => response.json())
+  .then((data) => {
+    products = data;
+    selectedBurgers();
+  })
+  .catch((error) => console.error("Error:", error));
 
+function selectedBurgers() {
+  setActiveColor("burgerBtn");
+  document.getElementById("product_grid").innerHTML = getCardCode(
+    products.burgers
+  );
+}
 
-burgers.forEach((item) => {
-  code += `<div class="col-lg-4 col-md-4 col-sm-6 col-12 my-2 p-3 p-sm-3 p-md-4 p-lg-5">  
-  <div class="card bgd-black btn-shadow h-100">
-        <img src="Assets/img/${item.img}.svg" class="position-absolute end-50"
-        style="width: 60%; bottom: -20%;"
-            alt="product">
-        <div class="card-body text-end">
-            <p class="font-kavoon text-white">${item.title}</p>
-            <p id="product_discription" class="ms-5 card-text text-white">${item.description}</p>
-            <h4 id="product_price" class="text-yellow ">Rs. ${item.price}</h4>
-        </div>
-    </div>
-</div>`;
-});
+function selectedSubs() {
+  setActiveColor("subBtn");
+  document.getElementById("product_grid").innerHTML = getCardCode(
+    products.submarines
+  );
+}
 
-document.getElementById("product_grid").innerHTML = code;
+function selectedFries() {
+  setActiveColor("friesBtn");
+  document.getElementById("product_grid").innerHTML = getCardCode(
+    products.fries
+  );
+}
+
+function selectedPasta() {
+  setActiveColor("pastaBtn");
+  document.getElementById("product_grid").innerHTML = getCardCode(
+    products.pasta
+  );
+}
+
+function selectedBeverages() {
+  setActiveColor("beveragesBtn");
+  document.getElementById("product_grid").innerHTML = getCardCode(
+    products.beverages
+  );
+}
+
+function selectedChicken() {
+  setActiveColor("chickenBtn");
+  document.getElementById("product_grid").innerHTML = getCardCode(
+    products.chicken
+  );
+}
+
+function setActiveColor(active) {
+  let btnNames = [
+    "burgerBtn",
+    "subBtn",
+    "friesBtn",
+    "pastaBtn",
+    "chickenBtn",
+    "beveragesBtn",
+  ];
+
+  btnNames.forEach((btn) => {
+    document
+      .getElementById(btn)
+      .style.setProperty("background-color", "transparent", "important");
+    document
+      .getElementById(btn)
+      .style.setProperty("color", "black", "important");
+  });
+
+  document
+    .getElementById(active)
+    .style.setProperty("background-color", "#eca400", "important");
+  document
+    .getElementById(active)
+    .style.setProperty("color", "white", "important");
+}
+
+function getCardCode(productType) {
+  code = "";
+  productType.forEach((item) => {
+    code += `<div class="col-lg-4 col-md-4 col-sm-6 col-12 my-2 p-3 p-sm-3 p-md-4 p-lg-5">    
+            <div class="card bgd-black btn-shadow h-100">
+            <button class="btn btn-success card-hover rounded-circle btn-custom position-absolute fs-4 px- py-1 d-flex align-items-center justify-content-center"
+            style="left: 95%; bottom: 85%; padding-bottom: 6px !important; padding-right: 13px !important; padding-left: 13px !important;">+</button>
+            <img src="Assets/img/${
+                item.img
+              }.svg" class="position-absolute end-50"
+              style="width: 60%; bottom: -20%;"
+                  alt="product">
+              <div class="card-body text-end">
+                  <p class="text-white">${item.item_code}</p>
+                  <p class="font-kavoon text-white">${item.title}</p>
+
+                  ${
+                    item.discount == 0
+                      ? ""
+                      : `<p class="ms-5 text-white fs-6"> <s>Rs : ${item.price}</s> - ${item.discount}% Off</p>`
+                  }
+
+                  <h4 class="text-yellow ">Rs. ${
+                    item.discount == 0
+                      ? item.price
+                      : item.price - item.price * (item.discount / 100)
+                  }</h4>
+              </div>
+            </div>
+          </div>`;
+  });
+  return code;
+}
+
+let cartShowing = false;
+
+function showCart() {
+  if (cartShowing){
+    hideCart();
+    return;
+  }
+  cartShowing = true;
+  document.getElementById("cart").style.display = "block";
+}
+
+function hideCart() {
+  if (!cartShowing){
+    showCart();
+    return;
+  }
+  cartShowing = false;
+  document.getElementById("cart").style.display = "none";
+}

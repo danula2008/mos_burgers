@@ -69,7 +69,7 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.card:hover{
+.card-hover:hover{
   scale: 1.05;
   transition-duration: 500ms;
 }
