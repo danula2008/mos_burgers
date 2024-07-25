@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <title>MOS Burgers</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bgd-black">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-4" href="#">
+                <img src="Assets/img/logo.png" alt="logo" width="180px" class="ms-3">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav justify-content-center flex-grow-1 gap-lg-5 gap-0">
+                    <li class="nav-item">
+                        <a class="nav-link font-kavoon text-white nav-hover" aria-current="page"
+                            href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-kavoon text-white nav-hover" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-kavoon text-white nav-hover" href="#">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-kavoon text-white nav-hover" href="#">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="me-5">
+                    <button class="btnSignIn rounded-5 bgd-black text-white px-3 py-1 pb-2 me-2">
+                        Sign In
+                    </button>
+                    <button class="btnSignUp bgd-yellow rounded-5 text-white px-3 py-1 pb-2 me-2">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="m-5 bgd-black p-3 rounded-3 text-center align-items-center justify-content-center mx-auto"
+        style="max-width: 600px;">
+        <img src="Assets/img/logo.png" alt="logo" class="w-50">
+        <h3 class="text-white font-kavoon m-4">Sign Up</h3>
+        <form style="max-width: 500px; margin: 0 auto;" class="text-center align-content-center justify-content-center">
+            <div class="text-start">
+                <div class="row">
+                    <div class="col-12 col-md-6 form-group mb-4">
+                        <label for="fName" class="text-white font-kavoon mb-2 ms-3">First Name</label>
+                        <input type="text" class="form-control rounded-5" id="fName" name="fName" required
+                            placeholder="Enter First Name">
+                    </div>
+                    <div class="col-12 col-md-6 form-group mb-4">
+                        <label for="address" class="text-white font-kavoon mb-2 ms-3">Address</label>
+                        <input type="text" class="form-control rounded-5" id="address" name="address" required
+                            placeholder="Enter Address">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 form-group mb-4">
+                        <label for="lName" class="text-white font-kavoon mb-2 ms-3">Last Name</label>
+                        <input type="text" class="form-control rounded-5" id="lName" name="lName" required
+                            placeholder="Enter Last Name">
+                    </div>
+                    <div class="col-12 col-md-6 form-group mb-4">
+                        <label for="city" class="text-white font-kavoon mb-2 ms-3">City</label>
+                        <div class="position-relative">
+                            <select class="custom-select form-control rounded-5" id="city" name="city">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 form-group mb-4">
+                        <label for="username" class="text-white font-kavoon mb-2 ms-3">Username</label>
+                        <input type="text" class="form-control rounded-5" id="username" name="username" required
+                            placeholder="Enter Username">
+                    </div>
+                    <div class="col-12 col-md-6 form-group mb-4">
+                        <label for="email" class="text-white font-kavoon mb-2 ms-3">Email</label>
+                        <input type="email" class="form-control rounded-5" id="email" name="email" required
+                            placeholder="Enter Email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 form-group mb-4">
+                        <label for="contact1" class="text-white font-kavoon mb-2 ms-3">Contact 1</label>
+                        <input type="tel" class="form-control rounded-5" id="contact1" name="contact1" required
+                            placeholder="Enter Contact 1" pattern="[0-9]{10}">
+                    </div>
+                    <div class="col-12 col-md-6 form-group mb-4">
+                        <label for="contact2" class="text-white font-kavoon mb-2 ms-3">Contact 2</label>
+                        <input type="tel" class="form-control rounded-5" id="contact2" name="contact2" required
+                            placeholder="Enter Contact 2" pattern="[0-9]{10}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group position-relative mb-4">
+                            <label for="pwd" class="text-white font-kavoon mb-2 ms-3">Password</label>
+                            <input type="password" class="form-control rounded-5" id="pwd" name="pwd" required
+                                placeholder="Enter Password">
+                            <span class="position-absolute translate-middle-y" style="top: 52px; right: 20px;">
+                                <i id="show-password-icon" class="bi bi-eye-fill fs-4"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group position-relative mb-4">
+                            <label for="pwdConfirm" class="text-white font-kavoon mb-2 ms-3">Confirm Password</label>
+                            <input type="password" class="form-control rounded-5" id="pwdConfirm" name="pwdConfirm"
+                                required placeholder="Enter Password Again">
+                            <span class="position-absolute translate-middle-y" style="top: 52px; right: 20px;">
+                                <i id="show-password-icon-confirm" class="bi bi-eye-fill fs-4"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <h4 class="text-red font-kavoon fs-6" id="errorText"></h4>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit"
+                        class="mb-4 bgd-yellow text-white w-50 mt-3 btnSignUp bgd-yellow rounded-3 btn-shadow text-white px-2 py-2 me-2 font-kavoon">Sign
+                        Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer class="bgd-black text-center mt-5 overflow-hidden" id="footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="app_register.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

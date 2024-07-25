@@ -78,3 +78,11 @@
   background-color: #eca400 !important;
   color: white !important;
 }
+
+.text-red{
+  color: #f14a41;
+}
+
+.text-green{
+  color: #3fb43d;
+}
