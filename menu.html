@@ -67,9 +67,11 @@
     <div class="cart-container position-fixed z-3 end-0 me-3 mt-3 bg-white rounded-4 shadow p-3" id="cart"
         style="display: none; width: 300px; bottom: 80px;">
         <h5 class="mb-3">Your Cart</h5>
-        <ul class="list-group mb-3" id="cart-list">
-            <!-- Cart items will be added here -->
-        </ul>
+        <div style="max-height: 200px; overflow-y: auto;">
+            <ul class="list-group mb-3" id="cart-list">
+                
+            </ul>
+        </div>
         <div class="d-flex justify-content-between align-items-center">
             <span class="fs-5">Total:</span>
             <span class="fs-5" id="cart-total">$0.00</span>

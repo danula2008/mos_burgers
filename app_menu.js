@@ -83,10 +83,10 @@ function getCardCode(productType) {
     code += `<div class="col-lg-4 col-md-4 col-sm-6 col-12 my-2 p-3 p-sm-3 p-md-4 p-lg-5">    
             <div class="card bgd-black btn-shadow h-100">
             <button class="btn btn-success card-hover rounded-circle btn-custom position-absolute fs-4 px- py-1 d-flex align-items-center justify-content-center"
-            style="left: 95%; bottom: 85%; padding-bottom: 6px !important; padding-right: 13px !important; padding-left: 13px !important;">+</button>
+            style="left: 95%; bottom: 85%; padding-bottom: 6px !important; padding-right: 13px !important; padding-left: 13px !important;" onClick="addToCart('${item}')">+</button>
             <img src="Assets/img/${
-                item.img
-              }.svg" class="position-absolute end-50"
+              item.img
+            }.svg" class="position-absolute end-50"
               style="width: 60%; bottom: -20%;"
                   alt="product">
               <div class="card-body text-end">
@@ -114,7 +114,7 @@ function getCardCode(productType) {
 let cartShowing = false;
 
 function showCart() {
-  if (cartShowing){
+  if (cartShowing) {
     hideCart();
     return;
   }
@@ -123,10 +123,23 @@ function showCart() {
 }
 
 function hideCart() {
-  if (!cartShowing){
+  if (!cartShowing) {
     showCart();
     return;
   }
   cartShowing = false;
   document.getElementById("cart").style.display = "none";
+}
+
+function addToCart(productType, index) {
+  console.log(productType);
+  console.log(index);
+  console.log(productType[index]);
+  console.log(productType[index].title);
+
+  document.getElementById("cart-list").innerHTML += `<li>
+    <div class="bgd-black p-3 text-white">
+      <h3>${productType[index].title}</h3>
+    </div>
+  </li>`;
 }
