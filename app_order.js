@@ -3,7 +3,7 @@ orders = [1, 2, 3, 4, 5, 6];
 orderCode = "";
 orders.forEach((element) => {
   orderCode += `<div class="col-12 col-md-6">
-                    <div class="bgd-black p-3 m-3 rounded-3 text-white">
+                    <div class="bgd-black p-3 m-3 rounded-3 text-white btn-shadow">
                         <div class="container">
                             <div class="row">
                                 <div class="col-12 col-sm-6">
