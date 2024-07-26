@@ -47,7 +47,8 @@
   scale: 1.03;
 }
 
-.btn-shadow {
+.btn-shadow,
+.box-shadow {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
@@ -65,24 +66,24 @@
   color: #eca400;
 }
 
-.txt-shadow{
+.txt-shadow {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.card-hover:hover{
+.card-hover:hover {
   scale: 1.05;
   transition-duration: 500ms;
 }
 
-.active_option{
+.active_option {
   background-color: #eca400 !important;
   color: white !important;
 }
 
-.text-red{
+.text-red {
   color: #f14a41;
 }
 
-.text-green{
+.text-green {
   color: #3fb43d;
 }
