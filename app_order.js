@@ -24,7 +24,8 @@ orders.forEach((element) => {
                                         <div class="order-status">
                                             <h6>Status: <span>In Process</span></h6>
                                             <h6>Payment Method: <span>Cash on Delivery</span></h6>
-                                            <h4 class="text-right"><span class="text-yellow">Rs. 125</span></h4>
+                                            <h6 class="text-green">16% discounts - Rs 500 saved</h6>
+                                            <h4 class="text-right"><span class="text-yellow">Rs. 125</span></h4>     
                                         </div>
                                     </div>
                                 </div>
