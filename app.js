@@ -230,7 +230,8 @@ function updateCart() {
   let cartDiscounts = 0.0;
 
   cart.forEach((item, index) => {
-    cartCode += `<li class="my-2">
+    cartCode += `
+    <li class="my-2">
   <div class="bgd-black p-3 text-white rounded-3">
     <h6>${item[0].title}</h6>
     <div class="d-flex gap-3">
