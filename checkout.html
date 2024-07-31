@@ -26,14 +26,16 @@
         </div>
     </div>
 
-    <div class="row mt-3">
-        <div class="col-12 col-sm-6 col-lg-8 order-2 order-sm-1">
-            <button>
-                test
-            </button>
+    <div class="row mt-5 ms-2">
+        <div class="col-12 col-sm-6 col-lg-8 order-2 order-sm-1 mt-3">
+            <h4>Select Payment Type:</h4>
+            <div class="text-center mt-3">
+                <button class="w-25 py-2 me-3 rounded-3 px-3 text-white bgd-yellow border-0" id="paymentCash">Cash</button>
+                <button class="w-25 py-2 rounded-3 px-3 text-white bgd-yellow border-0" id="paymentCard">Card</button>
+            </div>
         </div>
         <div class="col-12 col-sm-6 col-md-4 order-1 order-sm-2">
-            <div class="ms-3 mt-4 me-4">
+            <div class="ms-3 me-4">
                 <div class="d-flex justify-content-between mb-2">
                     <div class="fw-bold">Number of Items:</div>
                     <div id="num-items"></div>
@@ -52,6 +54,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="text-center mt-4" id="payment_area">
+       
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
