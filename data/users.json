@@ -1,8 +1,9 @@
 {
     "users":[
         {
-            "username": "danula",
-            "password": "12345"
+            "username": "admin",
+            "password": "12345",
+            "name": "John Smith"
         }
     ]
 }

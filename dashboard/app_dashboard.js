@@ -9,6 +9,8 @@ fetch("..//data//products.json")
   })
   .catch((error) => console.error("Error:", error));
 
+document.getElementById("lblCashier").innerText = JSON.parse(sessionStorage.getItem('Cashier'));
+
 function selectedBurgers() {
   setActiveColor("burgerBtn");
   document.getElementById("product_grid").innerHTML = getCardCode(
@@ -405,6 +407,6 @@ function getProductCartIndex(item_code) {
 }
 
 function checkout(){
-  sessionStorage.setItem('cart', JSON.stringify(cart));
+  sessionStorage.setItem('cart', JSON.stringify(cart));  
   window.location.href = "..\\checkout\\checkout.html";
 }

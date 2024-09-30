@@ -1,3 +1,11 @@
+const date = new Date();
+const year = date.getFullYear();
+const month = String(date.getMonth() + 1).padStart(2, "0");
+const day = String(date.getDate()).padStart(2, "0");
+const hour = String(date.getHours()).padStart(2, "0");
+const minute = String(date.getMinutes()).padStart(2, "0");
+const second = String(date.getSeconds()).padStart(2, "0");
+
 let cart = JSON.parse(sessionStorage.getItem("cart"));
 let orderCode = `
 <li class="list-group-item d-flex justify-content-between align-items-center bg-light">
@@ -166,23 +174,26 @@ function cardPaymentPatBtn() {
 function cashPaymentDoneBtn() {
   if (document.getElementById("balance-amount").value >= 0) {
     alert("Payment Successful");
-    downloadPDF();
+    
+    // downloadPDF();
+    window.location.href = "../dashboard/dashboard.html";
+
+    let purchases = JSON.parse(sessionStorage.getItem('purchases')) || [];
+    purchases.push({
+      "Date": year + "-" + month + "-" + day,
+      "Time": hour + ":" + minute + ":" + second,
+      "Cashier": JSON.parse(sessionStorage.getItem("Cashier")),
+      "NumberOfItems": cart.length,
+      "Total": cartTotal,
+      "TotalDiscounts": totalDiscounts,
+      "GrandTotal": cartTotal + totalDiscounts,
+      "Cart": cart
+    });
+    sessionStorage.setItem('purchases', JSON.stringify(purchases));
   }
 }
 
-const date = new Date();
-const year = date.getFullYear();
-const month = String(date.getMonth() + 1).padStart(2, "0");
-const day = String(date.getDate()).padStart(2, "0");
-const hour = String(date.getHours()).padStart(2, "0");
-const minute = String(date.getMinutes()).padStart(2, "0");
-const second = String(date.getSeconds()).padStart(2, "0");
-
 function downloadPDF() {
-  let cart = JSON.parse(sessionStorage.getItem("cart"));
-  let cartTotal = 0;
-  let totalDiscounts = 0;
-
   let billText = `                         MOS Burgers\n
 Date: ${year}-${month}-${day}   Time: ${hour}:${minute}:${second}
 ----------------------------------------------------------------
@@ -236,7 +247,6 @@ function validateCardNumber(cardNumber) {
 function validateExpirationDate(expirationDate) {
   const [month, year] = expirationDate.split("/");
   const expirationDateObject = new Date(`${year}-${month}-01`);
-  console.log(expirationDateObject);
   return expirationDateObject >= new Date();
 }
 

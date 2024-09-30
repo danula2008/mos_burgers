@@ -16,7 +16,6 @@
     <style>
         body {
             margin: 0;
-            /* Remove default margin */
             background-image: url('img/bakery_bg.jpg');
             background-size: cover;
             background-position: center;
@@ -26,23 +25,39 @@
     </style>
 </head>
 
-<body class="d-flex align-items-center justify-content-center vh-100">
+<body class="d-flex justify-content-center align-items-center vh-100">
 
-    <div class="container w-50 m-auto p-5 rounded-5 bg-white box-shadow bg-opacity-75 border border-yellow border-3">
-        <h2 class="mb-4 font-kavoon">Login to your Account.</h2>
-        <form class="mx-md-3 mt-4">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter Username" required>
-            </div>
-            <div class="form-group mt-4">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
-            </div>
-            <div class="text-center mt-2">
-                <button id="btnLogin" type="submit" onclick="login()" class="w-25 py-2 me-3 rounded-3 px-3 text-white bgd-yellow border-0 mt-5 btn-order font-kavoon">Login</button>
+    <div class="m-5 bg-white box-shadow bg-opacity-75 border border-yellow border-3 p-3 rounded-3 text-center align-items-center justify-content-center mx-auto"
+        style="max-width: 500px;">
+        <img src="img/logo.png" alt="logo" class="w-50">
+        <h3 class="mb-4 font-kavoon mt-3">Login to your Account</h3>
+        <form style="max-width: 400px; margin: 0 auto;" class="text-center align-content-center justify-content-center">
+            <div class="text-start">
+                <div class="form-group mb-4">
+                    <label for="username" class="mb-2 ms-3 fs-5">Username</label>
+                    <input type="text" class="form-control rounded-5" id="username" required>
+                </div>
+                <div class="form-group position-relative mb-4">
+                    <label for="password" class="mb-2 ms-3 fs-5">Password</label>
+                    <input type="password" class="form-control rounded-5" id="password" required>
+                    <span class="position-absolute translate-middle-y" style="top: 56px; right: 20px;">
+                        <i id="show-password-icon" class="bi bi-eye-fill fs-4"></i>
+                    </span>
+                </div>
+
+                <div class="text-center">
+                    <h4 class="text-red font-kavoon fs-6" id="errorText"></h4>
+                </div>
+
+                <div class="text-center mt-2">
+                    <button id="btnLogin" type="submit" onclick="login()"
+                        class="w-25 py-2 me-3 rounded-3 px-3 text-white bgd-yellow border-0 mt-3 btnSignIn font-kavoon">
+                        Sign In
+                    </button>
+                </div>
             </div>
         </form>
+    </div>
     </div>
 
 
