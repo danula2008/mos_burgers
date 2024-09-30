@@ -13,78 +13,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
     <title>MOS Burgers</title>
-
     <style>
-        .cart-btn:hover {
-            background-color: #ff9900;
-            scale: 1.05;
+        body {
+            margin: 0;
+            /* Remove default margin */
+            background-image: url('img/bakery_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
         }
     </style>
 </head>
 
-<body>
+<body class="d-flex align-items-center justify-content-center vh-100">
 
-    <button type="button" class="btn btn-lg cart-btn bgd-yellow position-fixed bottom-0 end-0 mb-3 me-3 z-3 rounded-4"
-        onclick="showCart()">
-        <i class="bi bi-cart fs-2 text-white"></i>
-    </button>
-
-    <div class="cart-container position-fixed z-3 end-0 me-3 mt-3 bg-white rounded-4 shadow p-3" id="cart"
-        style="display: none; width: 300px; bottom: 80px;">
-        <h5 class="mb-3">Cart</h5>
-        <div style="max-height: 50vh; overflow-y: auto;">
-            <ul class="list-group mb-3" id="cart-list">
-
-            </ul>
-        </div>
-        <div>
-            <div class="d-flex justify-content-between align-items-center">
-                <span class="fs-5">Total:</span>
-                <span class="fs-5 text-yellow" id="cart-total">Rs. 0</span>
+    <div class="container w-50 m-auto p-5 rounded-5 bg-white box-shadow bg-opacity-75 border border-yellow border-3">
+        <h2 class="mb-4 font-kavoon">Login to your Account.</h2>
+        <form class="mx-md-3 mt-4">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter Username" required>
             </div>
-            <div class="d-flex justify-content-between align-items-center">
-                <span class="fs-6">Discounts:</span>
-                <span class="fs-6" id="cart-discounts">Rs.0 saved</span>
+            <div class="form-group mt-4">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
             </div>
-            <button class="btn btn-lg bgd-yellow text-white w-100 mt-3 checkout-btn" onclick="checkout()">Checkout</button>
-            <button class="btn btn-lg bgd-black text-white w-100 mt-3 cartClose-btn" onclick="hideCart()">Close</button>
-        </div>
+            <div class="text-center mt-2">
+                <button id="btnLogin" type="submit" onclick="login()" class="w-25 py-2 me-3 rounded-3 px-3 text-white bgd-yellow border-0 mt-5 btn-order font-kavoon">Login</button>
+            </div>
+        </form>
     </div>
 
-    <div class="text-center mt-3 px-3">
-        <h3 class="font-kavoon">Products Menu</h3>
-
-        <div class="search-areamy-4 my-4" style="margin-left: 15%; margin-right: 15%;">
-            <div class="input-group">
-                <input id="searchBar" type="text" class="form-control search-bar rounded-2"
-                    placeholder="Search Product IDs...">
-                <button id="searchBtn" class="btn px-2 searchBtn d-none" style="width: 15%;" type="button"
-                    onclick="clearSearchBar()">
-                    <i class="bi bi-x-circle"></i>
-                </button>
-            </div>
-        </div>
-
-        <div class="button-group d-flex flex-wrap justify-content-center mt-3">
-            <button id="burgerBtn" class="rounded-5 px-3 bg-white text-black btnSignIn me-3 mb-3"
-                onclick="selectedBurgers()">Burgers</button>
-            <button id="subBtn" class="rounded-5 px-3 bg-white text-black btnSignIn me-3 mb-3"
-                onclick="selectedSubs()">Submarines</button>
-            <button id="friesBtn" class="rounded-5 px-3 bg-white text-black btnSignIn me-3 mb-3"
-                onclick="selectedFries()">Fries</button>
-            <button id="pastaBtn" class="rounded-5 px-3 bg-white text-black btnSignIn me-3 mb-3"
-                onclick="selectedPasta()">Pasta</button>
-            <button id="chickenBtn" class="rounded-5 px-3 bg-white text-black btnSignIn me-3 mb-3"
-                onclick="selectedChicken()">Chicken</button>
-            <button id="beveragesBtn" class="rounded-5 px-3 bg-white text-black btnSignIn mb-3"
-                onclick="selectedBeverages()">Beverages</button>
-        </div>
-        <div class="container">
-            <div id="product_grid" class="row flex">
-
-            </div>
-        </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -92,7 +52,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-    <script src="app_menu.js"></script>
     <script src="app.js"></script>
 </body>
 
