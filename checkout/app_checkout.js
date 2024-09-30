@@ -103,7 +103,7 @@ document.getElementById("paymentCard").addEventListener("click", function () {
       </form>
   </div>
   `;
-  stopRefresh("paymentCard")
+  stopRefresh("paymentCard");
 });
 
 document.getElementById("paymentCash").addEventListener("click", function () {
@@ -170,18 +170,18 @@ function cashPaymentDoneBtn() {
   }
 }
 
+const date = new Date();
+const year = date.getFullYear();
+const month = String(date.getMonth() + 1).padStart(2, "0");
+const day = String(date.getDate()).padStart(2, "0");
+const hour = String(date.getHours()).padStart(2, "0");
+const minute = String(date.getMinutes()).padStart(2, "0");
+const second = String(date.getSeconds()).padStart(2, "0");
+
 function downloadPDF() {
   let cart = JSON.parse(sessionStorage.getItem("cart"));
   let cartTotal = 0;
   let totalDiscounts = 0;
-
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  const hour = String(date.getHours()).padStart(2, "0");
-  const minute = String(date.getMinutes()).padStart(2, "0");
-  const second = String(date.getSeconds()).padStart(2, "0");
 
   let billText = `                         MOS Burgers\n
 Date: ${year}-${month}-${day}   Time: ${hour}:${minute}:${second}
@@ -198,8 +198,12 @@ Date: ${year}-${month}-${day}   Time: ${hour}:${minute}:${second}
 
     cartTotal += price;
     totalDiscounts += discount;
+    itemName =
+      item[0].title.toString().length > 22
+        ? item[0].title.toString().substring(0, 19) + "..."
+        : item[0].title.toString();
 
-    billText += `${item[0].item_code.padEnd(5)} | ${item[0].title.padEnd(
+    billText += `${item[0].item_code.padEnd(5)} | ${itemName.padEnd(
       22
     )} | ${item[1].toString().padEnd(1)} | Rs. ${unitPrice
       .toFixed(2)
@@ -219,7 +223,7 @@ Date: ${year}-${month}-${day}   Time: ${hour}:${minute}:${second}
   doc.setFont("courier");
   doc.setFontSize(14);
   doc.text(billText, 10, 10);
-  doc.save("bill.pdf");
+  doc.save(`${year}-${month}-${day}_${hour}-${minute}-${second}.pdf`);
 }
 
 function validateCardNumber(cardNumber) {
