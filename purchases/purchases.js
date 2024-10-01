@@ -5,6 +5,11 @@ document.getElementById("lblCashier").innerText = JSON.parse(
   sessionStorage.getItem("Cashier")
 );
 
+netTotalSales = 0;
+totalSalesDiscounts = 0;
+grandTotalSales = 0;
+totalItemsSold = 0;
+
 for (let i = 0; i < purchases.length; i++) {
   purchaseList.innerHTML += `
     <tr>
@@ -17,7 +22,17 @@ for (let i = 0; i < purchases.length; i++) {
     <td>${purchases[i].TotalDiscounts}</td>
     <td>${purchases[i].GrandTotal}</td>
 </tr>`;
+
+netTotalSales += purchases[i].Total;
+totalSalesDiscounts += purchases[i].TotalDiscounts;
+grandTotalSales += purchases[i].GrandTotal;
+totalItemsSold += purchases[i].NumberOfItems;
 }
+
+document.getElementById("netTotalSales").innerText = netTotalSales;
+document.getElementById("totalSalesDiscounts").innerText = totalSalesDiscounts;
+document.getElementById("grandTotalSaled").innerText = grandTotalSales;
+document.getElementById("totalItemsSold").innerText = totalItemsSold;
 
 const tableBody = document.getElementById("tableBody");
 

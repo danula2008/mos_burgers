@@ -175,7 +175,7 @@ function cashPaymentDoneBtn() {
   if (document.getElementById("balance-amount").value >= 0) {
     alert("Payment Successful");
     
-    // downloadPDF();
+    downloadPDF();
     window.location.href = "../dashboard/dashboard.html";
 
     let purchases = JSON.parse(sessionStorage.getItem('purchases')) || [];
