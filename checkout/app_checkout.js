@@ -63,7 +63,6 @@ cart.forEach((item) => {
 });
 
 document.getElementById("order-items").innerHTML = orderCode;
-
 document.getElementById("num-items").innerHTML = cart.length;
 document.getElementById("sub-total").innerHTML = `Rs. ${
   cartTotal + totalDiscounts
@@ -106,7 +105,7 @@ document.getElementById("paymentCard").addEventListener("click", function () {
           </div>
           <div class="text-center mt-4">
               <button class="w-25 py-2 me-3 rounded-3 px-3 text-white bgd-yellow border-0"
-                  id="paymentCard" onClick="cardPaymentPatBtn()">Pay</button>
+                  id="paymentCard" onClick="cardPaymentPayBtn()">Pay</button>
           </div>
       </form>
   </div>
@@ -154,7 +153,7 @@ document.getElementById("paymentCash").addEventListener("click", function () {
   stopRefresh("done-button");
 });
 
-function cardPaymentPatBtn() {
+function cardPaymentPayBtn() {
   const cardNumber = document.getElementById("card-number").value;
   const cardExpiry = document.getElementById("card-expiry").value;
   const cardCvv = document.getElementById("card-cvv").value;
@@ -167,7 +166,22 @@ function cardPaymentPatBtn() {
     alert("Invalid Card CVV");
   } else {
     alert("Payment Successful");
+    
     downloadPDF();
+    window.location.href = "../dashboard/dashboard.html";
+
+    let purchases = JSON.parse(sessionStorage.getItem('purchases')) || [];
+    purchases.push({
+      "Date": year + "-" + month + "-" + day,
+      "Time": hour + ":" + minute + ":" + second,
+      "Cashier": JSON.parse(sessionStorage.getItem("Cashier")),
+      "NumberOfItems": cart.length,
+      "Total": cartTotal,
+      "TotalDiscounts": totalDiscounts,
+      "GrandTotal": cartTotal + totalDiscounts,
+      "Cart": cart
+    });
+    sessionStorage.setItem('purchases', JSON.stringify(purchases));
   }
 }
 
